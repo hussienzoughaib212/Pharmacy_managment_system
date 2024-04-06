@@ -85,6 +85,7 @@ app.put("/products/:id", async (req, res) => {
       return res.status(404).send("Product not found");
     } else {
       // If a product is found, update its properties
+      target.id=req.body.id || target.id;
       target.name = req.body.name || target.name;
       target.category = req.body.category || target.category;
       target.manufacturer = req.body.manufacturer || target.manufacturer;
