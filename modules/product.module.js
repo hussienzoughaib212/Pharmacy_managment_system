@@ -29,8 +29,8 @@ const ProductSchema = mongoose.Schema(
             required: true,
             default: 0
         },
-       expiratdate:{
-        type:String,
+       expirytDate:{
+        type:Date,
         equired: [true, "please enter the expiary date"]
        }
 
