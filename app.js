@@ -126,27 +126,11 @@ app.delete("/products/:id",async(req,res)=>{
   res.status(500).json({message:error.message}); 
 }
 });
-app.get("/products/search", async (req, res) => {
-  try {
-    // Extract the search query from the request query parameters
-    const searchTerm = req.query.q;
 
-    // Perform a search in the database based on the search query
-    const products = await Product.find({
-      $or: [
-        { name: { $regex: searchTerm, $options: "i" } }, // Case-insensitive search by name
-        { category: { $regex: searchTerm, $options: "i" } },
-        {price: { $regex: searchTerm, $options: "i" } },
-      ]
-    });
 
-    // Return the search results in the response
-    res.status(200).json(products);
-  } catch (error) {
-    // If an error occurs during the database operation, return a 500 Internal Server Error
-    res.status(500).json({ message: error.message });
-  }
-});
+
+
+
 
 
 mongoose.connect(url)
