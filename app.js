@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Product = require("./modules/product.module.js");
-const e = require('express');
+
 const app = express();
 class ProductFilter {
   static async validateProduct(req, res, next) {
