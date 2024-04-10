@@ -1,4 +1,5 @@
 const Product=require("../modules/product.module.js");
+
 const get_all=async (req, res) => {
     try {
       const products = await Product.find();
