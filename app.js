@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Product = require("./modules/product.module.js");
 
 const productRoute = require("./routes/product.rout.js");
+const supplierRoute=require("./routes/supllier.rout.js")
 const app = express();
 class ProductFilter {
   static async validateProduct(req, res, next) {
@@ -44,6 +45,7 @@ class ProductFilter {
 app.use(express.json());
 app.use(ProductFilter.validateProduct);
 app.use("/products",productRoute);
+app.use("/supplier",supplierRoute)
 const url = "mongodb://localhost:27017/pharmacy-db";
 
 
